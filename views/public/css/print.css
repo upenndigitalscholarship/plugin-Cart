@@ -1,0 +1,61 @@
+body {
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 18px;
+}
+
+hr {
+    background-color: #000;
+    border: 1px solid #000;
+}
+    
+
+h1, h2, h3 {
+    font-weight: normal;
+    font-family: 'Gill Sans', sans-serif;
+    color: #000;
+}
+p, ul, ol, dl{
+    margin-bottom: 18px;
+}
+h1 {
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+hr {
+    height: 2px;
+    color: black;
+}
+
+.poster-items {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+.poster-items h2 {
+    margin-top: 0;
+}
+.poster-items li {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: 18px;
+}
+.item-file {
+    display: block;
+    float: left;
+    margin: 0 18px 0 0;
+}
+#disclaimer-text {
+    font-size: 0.75em;
+}
+@media print {
+    @page {
+        size: 8.5in 11in;
+        margin-top:    0.50in;
+        margin-right:  0.26in;
+        margin-left:   0.26in;
+        margin-bottom: 1.50in;
+    
+    }
+}
