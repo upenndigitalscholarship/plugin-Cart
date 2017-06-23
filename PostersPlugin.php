@@ -33,6 +33,8 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
         'config_form',
         'define_acl',
         'define_routes',
+        'public_items_browse_each',
+        'public_footer',
     );
     // Define Filters
     protected $_filters = array(
@@ -181,6 +183,10 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
             return;
         }
 
+
+
+
+
        $bp = get_option('poster_page_path');
        $router = $args['router'];
        //browse
@@ -216,8 +222,34 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
                 )
             )
        ); 
-       $router->addRoute(
-            'genus',
+       
+     /*  $router->addRoute( //here  ...  changed order to affect the priority of routing (?)
+        'add',
+        new Zend_Controller_Router_Route(
+            "$bp/:add",
+            array(
+                'module'    => 'posters',
+                'controller' => 'carts',
+                'action'     => 'show'
+            )
+        )
+           ); */
+       
+ 
+        $router->addRoute(
+        'genus/browse',
+        new Zend_Controller_Router_Route(
+            "genus/:browse",
+            array(
+                'module'    => 'posters',
+                'controller' => 'genus',
+                'action'     => 'browse'
+            )
+        )
+       );   
+       
+              $router->addRoute(
+            'genus/show',
             new Zend_Controller_Router_Route(
                 "genus/show",
                 array(
@@ -226,8 +258,50 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
                     'action'     => 'show'
                 )
             )
-       );   
-
+       );  
+        $router->addRoute(
+        'family',
+        new Zend_Controller_Router_Route(
+            "family/browse",
+            array(
+                'module'    => 'posters',
+                'controller' => 'family',
+                'action'     => 'browse'
+            )
+        )
+           );
+           
+          
+    }
+    
+    /** 
+     * Added to place an add item to cart button on each
+     * item in the browse page
+     * 
+     * Sasha Renninger & Josh Berg, Penn DS Team, 2017
+     */
+    public function hookPublicItemsBrowseEach($args) {
+        if(current_user()){
+            $user = current_user();
+            $user_posters = get_records('Poster',array('user_id'=>$user->id));
+            
+            echo '<div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select a Poster
+                    </button>
+                <ul class="dropdown-menu">';
+            foreach($user_posters as $poster) {
+                echo '<li><a class="dropdown-item" href="' . public_url(array('controller'=> 'poster', 'action' => 'addPosterItem')) . '">' . $poster->title . '</a></li>';
+            }
+            echo '</ul></div>';
+        }
+    }
+    
+    /**
+     * Needed for dropdown in previous hook to work
+     */
+    public function hookPublicFooter($args) {
+        echo '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>';
     }
     
 

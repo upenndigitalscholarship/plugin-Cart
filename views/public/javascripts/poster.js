@@ -217,4 +217,4 @@ Omeka.Poster = {};
         });
 
     }
-  })(jQuery);
+})(jQuery);

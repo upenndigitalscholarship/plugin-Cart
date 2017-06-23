@@ -24,7 +24,6 @@ echo queue_css_file('poster');
 <div id="poster">
     <div id="poster-info">
           <h2><?php echo __('Poster Meta'); ?></h2>
-          
           <form action="<?php echo html_escape(url(array('action'=>'save', 'id'=>$poster->id), get_option('poster_page_path'))); ?>" method="post" accept-charset="utf-8" id="poster-form">
               <div class="field">
                   <label for="title">Title of Poster</label>
@@ -61,17 +60,13 @@ echo queue_css_file('poster');
                       </tbody>
                   </table>
               </div>
-               
+
               <div id="poster-additem">
-                 <!-- <a type="btn btn-success" id="add-item-button">Add an Item</a> -->
-                 
-              <?php  if (count($items)): ?>
+              <?php if (count($items)): ?>
                   <button type="button" id="add-item-button">Add an Item</button>
-                  
-                  
               <?php else: ?>
-                   <button type="button" id="add-item-button" disabled="disabled">Add an item &rarr;</button>
-                      <p>You have to add notes or tags to an item before adding them to a poster</p> 
+                  <button type="button" id="add-item-button" disabled="disabled">Add an item &rarr;</button>
+                      <p>You have to add notes or tags to an item before adding them to a poster</p>
               <?php endif; ?>
               </div>
       

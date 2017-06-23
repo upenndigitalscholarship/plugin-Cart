@@ -115,8 +115,8 @@ echo head(array('title'=>$pageTitle));
     <?php endif; ?>
     <?php if ($this->currentUser): ?>
         <div class="edit-link">
-           <a type="button" class="btn btn-default"  href="<?php echo html_escape(url(array('action' => 'edit','id' => $poster->id), get_option('poster_page_path'))); ?>" >Edit</a>
-            <a type="button" class="btn btn-default" href="<?php echo html_escape(url(array('action'=>'print','id' => $poster->id), get_option('poster_page_path'))); ?>" media="print">Print</a>
+            <a href="<?php echo html_escape(url(array('action' => 'edit','id' => $poster->id), get_option('poster_page_path'))); ?>" class="edit-poster-link">Edit</a>
+            <a href="<?php echo html_escape(url(array('action'=>'print','id' => $poster->id), get_option('poster_page_path'))); ?>" class="print" media="print" >Print</a>
         </div>
     <?php endif; ?>
 </div>

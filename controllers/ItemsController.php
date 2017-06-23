@@ -19,6 +19,8 @@ class Posters_ItemsController extends Omeka_Controller_AbstractActionController
             $this->_setParam('sort_field', 'added');
             $this->_setParam('sort_dir',   'd');
         }
+        
+        $this->view->posters = $this->_helper->db->findBy(array('user_id' => $this->_currentUser->id), 'Poster');
 
         //Must be logged in to view items specific to certain users
         /*if ($this->_getParam('user') && !$this->_helper->acl->isAllowed('browse', 'users')) {

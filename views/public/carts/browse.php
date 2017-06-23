@@ -31,27 +31,23 @@ echo head(array('title' => $pageTitle, 'bodyclass' => 'posters browse'));
         
         <td class="poster-title">
             
-            <h3><a href="<?php echo html_escape(url(array('action' => 'show','id'=>$poster->id), get_option('poster_page_path'))); ?>" style="font-size:32px;" class="view-poster-link"><?php echo html_escape($poster->title); ?></a> <a class="btn btn-default btn-xs" href="<?php echo html_escape(url(array('action'=>'print','id' => $poster->id), get_option('poster_page_path'))); ?>" class="print" media="print" >Print</a></h3>
-            <hr style="visibility: hidden; height:0px; margin-top:5px; margin-bottom:5px;">
-            <ul class="poster-actions" style="margin-right: 0px;"> <!--padding:0px 50px 0px 0px;-->
+            <h3><a href="<?php echo html_escape(url(array('action' => 'show','id'=>$poster->id), get_option('poster_page_path'))); ?>"
+            
+            class="view-poster-link"><?php echo html_escape($poster->title); ?></a></h3>
+            
+            <ul class="poster-actions">
                 
             <?php if($this->user) : ?>
-                <li><a class="btn btn-success btn-xs" href="<?php echo html_escape(url(array('action' => 'show','id'=>$poster->id), get_option('poster_page_path'))); ?>">View</a></li>
                 <li><a class="btn btn-warning btn-xs" href="<?php echo html_escape(url(array('action'=>'edit','id' => $poster->id), get_option('poster_page_path'))); ?>">Edit</a></li>
                 <li><a class="btn btn-danger btn-xs" href="<?php echo html_escape(url(array('action' => 'delete-confirm', 'id' => $poster->id),  get_option('poster_page_path'))); ?>">Delete</a></li>
                 <li><a class="btn btn-info btn-xs" href="<?php echo html_escape(url(array('action'=>'share','id' => $poster->id), get_option('poster_page_path'))); ?>">Share</a></li>
-                
             <?php endif; ?>
-              
+                <li><a class="btn btn-primary btn-xs" href="<?php echo html_escape(url(array('action'=>'print','id' => $poster->id), get_option('poster_page_path'))); ?>" class="print" media="print" >Print</a></li>  
             </ul>
             <br>
-             <hr style="visibility: visible; height:0px; margin-top:0px; margin-bottom:10px;"> 
         </td>
-       
         <td class="poster-date"><?php echo html_escape(format_date($poster->date_created)); ?></td>
-           
         <td><?php echo html_escape(snippet($poster->description,0, 200)); ?></td>
-        
         </ul>
     </tr>
 <?php endforeach; ?>
