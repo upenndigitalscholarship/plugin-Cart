@@ -30,7 +30,7 @@
                 }
             } 
             ?>
-            <h2>Title: "<?php echo metadata($posterItem, array('Dublin Core', 'Title')); ?>"</h2>
+            <h2>Title: "<?php echo metadata($posterItem, array('Item Type Metadata', 'Common Name')); ?>"</h2>
             <h3>Url: <?php echo 'http://'.$_SERVER['HTTP_HOST'].html_escape(url("items/show/{$posterItem->id}")); ?>"</h3>
             <div class='poster-item-annotation'>
                 <?php echo $posterItem->caption; ?>

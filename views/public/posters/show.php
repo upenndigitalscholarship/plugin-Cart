@@ -42,8 +42,8 @@ echo head(array('title'=>$pageTitle));
                                 array(
                                     'title' => metadata($posterItem, 
                                     array(
-                                        'Dublin Core', 
-                                        'Title'
+                                        'Item Type Metadata', 
+                                        'Common Name'
                                     )
                                 ), 
                                 'alt' => strip_formatting($posterItem->caption)), 
@@ -67,7 +67,7 @@ echo head(array('title'=>$pageTitle));
                 <div class='grid-caption'>
                 <div class="item-caption-grid"> <!--caption style (inline) affected by this div -->
                 
-                    <h3><?php echo link_to_item(metadata($posterItem, array('Dublin Core', 'Title')), array(), 'show', $posterItem); ?></h3>
+                    <h3><?php echo link_to_item(metadata($posterItem, array('Item Type Metadata', 'Common Name')), array(), 'show', $posterItem); ?></h3>
                     
                         <?php echo $posterItem->caption; ?>
                     </div>
@@ -76,13 +76,13 @@ echo head(array('title'=>$pageTitle));
         <?php else: ?>
             <?php if ($pageLayout == 'carousel'): ?>
                 <div class="text-only">
-                    <h3><?php echo link_to_item(metadata($posterItem, array('Dublin Core', 'Title')), array(), 'show', $posterItem); ?></h3>
+                    <h3><?php echo link_to_item(metadata($posterItem, array('Item Type Metadata', 'Common Name')), array(), 'show', $posterItem); ?></h3>
                     <div class='bx-caption'>
                         <?php echo $posterItem->caption; ?>
                     </div>
                 </div>
             <?php else: ?>
-                <h3><?php echo link_to_item(metadata($posterItem, array('Dublin Core', 'Title')), array(), 'show', $posterItem); ?></h3>
+                <h3><?php echo link_to_item(metadata($posterItem, array('Item Type Metadata', 'Common Name')), array(), 'show', $posterItem); ?></h3>
                 <div class='grid-caption'>
                     <?php echo $posterItem->caption; ?>
                 </div>

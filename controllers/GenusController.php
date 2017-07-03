@@ -45,8 +45,8 @@ class Posters_GenusController extends Omeka_Controller_AbstractActionController
                     WHERE j.element_id = 93 AND k.element_id = 96 AND j.text = ?;";
         $items = $db -> getTable('Item') -> fetchObjects($select,$genus_species);
         
-        for ($i = 0 ; $i < count($results) ; $i++) {
-            $species[$i] = $results[$i][text];
+        for ($i = 0 ; $i < count($items) ; $i++) {
+            $species[$i] = $items[$i][text];
         }
         
         $this->view->species = $species;

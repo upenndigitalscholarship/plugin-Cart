@@ -13,7 +13,6 @@ echo pagination_links(
 ?>
 
 <div id="item-list">
-    <h2>Does this work</h2>
     <?php echo item_search_filters(); ?>
     <?php if (!has_loop_records('items')): ?>
             <p><?php echo __('There are no items to choose from.'); ?></p>
@@ -38,7 +37,7 @@ function posterItemListing($item){
     }
 
     $html .= '<h4 class="title">'
-          . metadata($item, array('Dublin Core', 'Title'))
+          . metadata($item,array('Item Type Metadata','Common Name'))
           . '</h4>'
           . '<button type="button" class="select-item" >' . __('Select Item').'</button>'
           . '</div>';

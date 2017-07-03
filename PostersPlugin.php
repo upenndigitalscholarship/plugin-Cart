@@ -185,8 +185,6 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
 
 
 
-
-
        $bp = get_option('poster_page_path');
        $router = $args['router'];
        //browse
@@ -211,6 +209,7 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
                    'action'     => 'index',
                    'id'         => '\d+'
                )));
+
        $router->addRoute(
             'items',
             new Zend_Controller_Router_Route(
@@ -287,13 +286,14 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
             
             echo '<div class="btn-group">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select a Poster
+                        Add to Cart
                     </button>
                 <ul class="dropdown-menu">';
             foreach($user_posters as $poster) {
-                echo '<li><a class="dropdown-item" href="' . public_url(array('controller'=> 'poster', 'action' => 'addPosterItem')) . '">' . $poster->title . '</a></li>';
+                echo '<li><a class="dropdown-item" href="' . public_url(array('controller'=> get_option('poster_page_path'), 'action' => 'edit')) . "/" . $poster->id . '/?itemId=' . $args['item']->id . '">' . $poster->title . '</a></li>';
             }
             echo '</ul></div>';
+
         }
     }
     

@@ -1,6 +1,6 @@
 
 
-<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
+<?php echo head(array('title' => metadata($item,array('Item Type Metadata','Common Name')),'bodyclass' => 'items show')); ?>
 
 
 

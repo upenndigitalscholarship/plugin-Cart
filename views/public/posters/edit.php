@@ -57,6 +57,7 @@ echo queue_css_file('poster');
                               echo common('spot', array('posterItem'=>$posterItem),'posters' );
                           }
                       ?>
+                      <?php echo common('spot', array('posterItem'=>$itemsToAdd), 'posters'); ?>
                       </tbody>
                   </table>
               </div>
