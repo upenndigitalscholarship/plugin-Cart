@@ -57,7 +57,18 @@ echo queue_css_file('poster');
                               echo common('spot', array('posterItem'=>$posterItem),'posters' );
                           }
                       ?>
-                      <?php echo common('spot', array('posterItem'=>$itemsToAdd), 'posters'); ?>
+                      
+                      <!-- PennDS: Added if statement to only require item ID when there is one being fed into the edit page so this way the edit page works when an item is not being added from the browse (or a similar) page -->
+                      
+                      <?php if(isset($itemsToAdd)){
+                      
+                      echo common('spot', array('posterItem'=>$itemsToAdd), 'posters'); 
+                      
+                      
+                      }
+                      ?>
+                      
+                      
                       </tbody>
                   </table>
               </div>

@@ -15,8 +15,11 @@ echo head(array('title'=>$pageTitle));
     <div id="poster-info">
     <?php echo $poster->description; ?>
     </div>
+    
 
  <?php fire_plugin_hook('public_collections_browse', array('collections'=>$poster->Items, 'view' => $this)); ?>
+ 
+ 
 
    <h1>Items in this cart:</h1>
    
