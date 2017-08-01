@@ -190,10 +190,10 @@ class Posters_PostersController extends Omeka_Controller_AbstractActionControlle
                 $site_title = get_option('site_title');
                 $from = get_option('administrator_email');
 
-                $subject = $this->_currentUser->username . " shared a poster with you";
+                $subject = $this->_currentUser->username . " shared a cart with you";
 
                 $body = $subject . " on $site_title. \n\n"
-                      . "Click here to view the poster:\n"
+                      . "Click here to view the cart:\n"
                       . absolute_url(array('action' => 'show', 'id'=> $poster->id), get_option('poster_page_path'));
                 $header = "From: $from\n"
                        . "X-Mailer: PHP/" . phpversion();
