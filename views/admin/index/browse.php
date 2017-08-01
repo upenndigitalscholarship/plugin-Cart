@@ -1,7 +1,9 @@
 <?php
 //$head = array('title' => __('Browse Posters'));
 $pageTitle = html_escape(get_option('poster_page_title'));
-echo head(array('title' => $pageTitle)); ?>
+// Major changes need to be made to turn this to "Carts"
+// In other words, you have to change the options table
+echo head(array('title' => $pageTitle));?>
 <script>
  $('.poster').carousel();
 
