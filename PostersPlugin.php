@@ -160,10 +160,10 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $acl = $args['acl'];
         
-        $acl->addResource('Posters_Poster');
-        $acl->allow(null, 'Posters_Poster', array('show','browse'));
-        $acl->allow('guest', 'Posters_Poster', array('browse','show','edit', 'add', 'delete'), new Omeka_Acl_Assert_Ownership);
-        $acl->allow('guest','Posters_Poster', array('browse','show'));
+        $acl->addResource('Carts_Cart');
+        $acl->allow(null, 'Carts_Cart', array('show','browse'));
+        $acl->allow('guest', 'Carts_Cart', array('browse','show','edit', 'add', 'delete'), new Omeka_Acl_Assert_Ownership);
+        $acl->allow('guest','Carts_Cart', array('browse','show'));
         
     }
     public function filterPublicNavigationMain($nav)
