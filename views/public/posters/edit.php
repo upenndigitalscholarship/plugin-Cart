@@ -1,5 +1,5 @@
 <?php
-    $pageTitle = 'Edit Poster: &quot;' . html_escape($poster->title) . '&quot;';
+    $pageTitle = 'Edit Cart: &quot;' . html_escape($poster->title) . '&quot;';
 //queue_js_file(array('tiny_mce/tiny_mce', 'poster'));
 echo queue_js_file('poster');
 echo queue_js_file('vendor/tiny_mce/tiny_mce');
@@ -17,16 +17,16 @@ echo queue_css_file('poster');
 
 <ul class="poster-actions">
     <li><a href="<?php echo html_escape(url(array('action'=>'help'), get_option('poster_page_path'))); ?>" class="help-link">Help</a></li>
-    <li><a href="<?php echo html_escape(url(array('action'=>'share'), get_option('poster_page_path'))); ?>" class="share-link">Share Poster</a></li>
+    <li><a href="<?php echo html_escape(url(array('action'=>'share'), get_option('poster_page_path'))); ?>" class="share-link">Share Cart</a></li>
     <li><a href="<?php echo html_escape(url(array('action'=>'print'), get_option('poster_page_path'))); ?>" class="print" media="print" >Print</a></li>
  </ul>
 
 <div id="poster">
     <div id="poster-info">
-          <h2><?php echo __('Poster Meta'); ?></h2>
+          <h2><?php echo __('Cart Meta'); ?></h2>
           <form action="<?php echo html_escape(url(array('action'=>'save', 'id'=>$poster->id), get_option('poster_page_path'))); ?>" method="post" accept-charset="utf-8" id="poster-form">
               <div class="field">
-                  <label for="title">Title of Poster</label>
+                  <label for="title">Title of Cart</label>
                   <div class="inputs">
                   <?php echo $this->formText('title', $poster->title, array('id'=>'title')); ?>
                   </div>
@@ -39,11 +39,11 @@ echo queue_css_file('poster');
                   </div>
               </div>
     
-              <h2 id="poster-items-title">Poster Items</h2>
+              <h2 id="poster-items-title">Cart Items</h2>
 
               <?php $noItems = (count($poster->Items) < 1) ? 'class="no-items"' : ''; ?>
 
-              <p id="poster-no-items-yet" <?php echo $noItems; ?>>You have not added any items to this poster yet.</p>
+              <p id="poster-no-items-yet" <?php echo $noItems; ?>>You have not added any items to this cart yet.</p>
               
               <div id="poster-canvas" <?php echo $noItems; ?>>
                   <table id="poster-items">
@@ -78,14 +78,14 @@ echo queue_css_file('poster');
                   <button type="button" id="add-item-button">Add an Item</button>
               <?php else: ?>
                   <button type="button" id="add-item-button" disabled="disabled">Add an item &rarr;</button>
-                      <p>You have to add notes or tags to an item before adding them to a poster</p>
+                      <p>You have to add notes or tags to an item before adding them to a cart</p>
               <?php endif; ?>
               </div>
       
               <div id="submit-poster">
-                  <input type="submit" name="save_poster" value="Save Poster" > or 
+                  <input type="submit" name="save_poster" value="Save Cart" > or 
                   <?php if (is_admin_theme()): ?>
-                      <a href="<?php echo html_escape(url(array('action'=>'discard'), get_option('poster_page_path'))); ?>">Discard Changes and Return to Poster Administration</a>
+                      <a href="<?php echo html_escape(url(array('action'=>'discard'), get_option('poster_page_path'))); ?>">Discard Changes and Return to Cart Administration</a>
                   <?php else: ?>
                       <a href="<?php echo html_escape(url(array('action'=> 'discard'), get_option('poster_page_path'))); ?>">Discard Changes and Return to the Dashboard</a>
                   <?php endif ?>

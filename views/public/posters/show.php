@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = 'Poster: &quot;' . html_escape($poster->title) . '&quot;';
+$pageTitle = 'Cart: &quot;' . html_escape($poster->title) . '&quot;';
 $pageLayout = get_option('poster_show_option');
 $defaultType = get_option('poster_default_file_type');
 echo queue_css_file('jquery.bxslider');

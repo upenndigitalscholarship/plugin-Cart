@@ -1,4 +1,4 @@
-<?php $pageTitle = 'Poster: &quot;' . html_escape($poster->title). '&quot;'; ?>
+<?php $pageTitle = 'Cart: &quot;' . html_escape($poster->title). '&quot;'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

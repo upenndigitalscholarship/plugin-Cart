@@ -12,11 +12,11 @@ define('POSTER_SHOW_OPTION', 'carousel');
 define('POSTER_DEFAULT_FILE_TYPE', 'original');
 define('POSTER_DEFAULT_FILE_TYPE_PRINT', 'original');
 define('POSTER_DISCLAIMER','This page contains user generated content and does not necessarily reflect the opinions of this website. For more information please refer to our terms of service and conditions. If you would like to report the content of this as objectionable, Please contact us.');
-define('POSTER_HELP','<h2>Your Posters</h2>'
-    .'<p>To build a poster, you may use any public item in in this website and add a caption,</p>'
-                    .'<p>Click the button that says &quot;New Poster&quot;. Assign a title to your poster,'
-                    .'add a short description. Cick the tab that says &quot;Add an Item&quot; and select any item that you wish to include in your poster.'
-    .'Continue adding items and captions.</p><p> Be sure to save your poster. You may return to edit your poster at any time.</p> <p>You may print this poster, or share it by email.</p>');
+define('POSTER_HELP','<h2>Your Carts</h2>'
+    .'<p>To build a cart, you may use any public item in in this website and add a caption,</p>'
+                    .'<p>Click the button that says &quot;New Cart&quot;. Assign a title to your cart,'
+                    .'add a short description. Cick the tab that says &quot;Add an Item&quot; and select any item that you wish to include in your cart.'
+    .'Continue adding items and captions.</p><p> Be sure to save your cart. You may return to edit your cart at any time.</p> <p>You may print this cart, or share it by email.</p>');
  /**
   * Posters plugin class
   *
@@ -134,7 +134,7 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterAdminNavigationMain($nav)
     {
         $nav[] = array(
-            'label'    => __('Posters'),
+            'label'    => __('Carts'),
             'uri'      => url('posters'),
            // 'resource' => 'edit',
         );
@@ -170,7 +170,7 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $bp = get_option('poster_page_path');
         $nav[] = array(
-             'label' => __('Posters'),
+             'label' => __('Carts'),
              'uri'   => url($bp."/browse"),
              'visible' => true,
         );
