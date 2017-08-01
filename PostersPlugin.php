@@ -7,7 +7,7 @@
  */
 require_once dirname(__FILE__) . '/helpers/PosterFunctions.php';
 define('POSTER_PAGE_PATH','posters');
-define('POSTER_PAGE_TITLE', 'Posters');
+define('POSTER_PAGE_TITLE', 'Carts');
 define('POSTER_SHOW_OPTION', 'carousel');
 define('POSTER_DEFAULT_FILE_TYPE', 'original');
 define('POSTER_DEFAULT_FILE_TYPE_PRINT', 'original');
