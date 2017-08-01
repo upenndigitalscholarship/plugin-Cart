@@ -6,7 +6,7 @@
  * @package Posters
  */
 require_once dirname(__FILE__) . '/helpers/PosterFunctions.php';
-define('POSTER_PAGE_PATH','posters');
+define('POSTER_PAGE_PATH','carts');
 define('POSTER_PAGE_TITLE', 'Carts');
 define('POSTER_SHOW_OPTION', 'carousel');
 define('POSTER_DEFAULT_FILE_TYPE', 'original');
@@ -144,7 +144,7 @@ class PostersPlugin extends Omeka_Plugin_AbstractPlugin
     public function filterGuestUserWidgets($widgets)
     { 
         $bp = get_option('poster_page_path');
-        $widget = array('label' => __('Posters'));
+        $widget = array('label' => __('Carts'));
         $browse = url("{$bp}/browse");
         $create = url("{$bp}/new");
         $html = "<ul>"
