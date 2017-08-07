@@ -19,5 +19,7 @@ This plugin requires [Guest User](http://omeka.org/add-ons/plugins/guest-user/) 
 
 * On the command line, navigate to the `plugins` directory of your omeka installation and run `git clone https://github.com/sashafr/plugin-Cart.git`. Rename the folder to "Cart". Then install the plugin through the Omeka Dashboard.
 
+*Note: There are minimal changes to the term "posters" throughout the code (replacing it with "cart), with the hope that it will be easy to merge any updates to the Posters plugin.*
+
 **Developed by the Penn Libraries Summer Digital Scholarship Interns Josh Berg and Nia Hammond**
 

@@ -22,7 +22,7 @@ define('POSTER_HELP','<h2>Your Carts</h2>'
   *
   * @package Posters
   */
-class PostersPlugin extends Omeka_Plugin_AbstractPlugin
+class CartPlugin extends Omeka_Plugin_AbstractPlugin
 {   
     // Define Hooks
     protected $_hooks = array(
