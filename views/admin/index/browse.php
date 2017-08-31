@@ -1,7 +1,9 @@
 <?php
 //$head = array('title' => __('Browse Posters'));
 $pageTitle = html_escape(get_option('poster_page_title'));
-echo head(array('title' => $pageTitle)); ?>
+// Major changes need to be made to turn this to "Carts"
+// In other words, you have to change the options table
+echo head(array('title' => $pageTitle));?>
 <script>
  $('.poster').carousel();
 
@@ -24,7 +26,7 @@ echo head(array('title' => $pageTitle)); ?>
                        <tr><td><a href="<?php echo html_escape(public_url(get_option('poster_page_path').'/show/'.$poster->id)); ?>" target="_blank" 
                                   class="view-poster-link"><?php echo html_escape($poster->title); ?></a>
                                <ul class="action-links group">
-                                   <?php if(is_allowed('Posters_Poster', 'delete')): ?>
+                                   <?php if(is_allowed('Carts_Cart', 'delete')): ?>
                                    <li> 
                                     <a href="<?php echo html_escape(
                                                     url(

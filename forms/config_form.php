@@ -12,20 +12,20 @@ jQuery(window).load(function () {
 </script>
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster Page Title'); ?></label>    
+        <label><?php echo __('Cart Page Title'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
-        <p class='explanation'><?php echo __("Replace default Poster page title."); ?></p>
+        <p class='explanation'><?php echo __("Replace default Cart page title."); ?></p>
         <input name="poster_page_title" value="<?php echo get_option('poster_page_title'); ?>" type="text" />
     </div>
 </div>
 
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster Page Path'); ?></label>    
+        <label><?php echo __('Cart Page Path'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
-        <p class='explanation'><?php echo __("Replace default Poster page path."); ?>
+        <p class='explanation'><?php echo __("Replace default Cart page path."); ?>
         </p>
         <input name="poster_page_path" value="<?php echo get_option('poster_page_path'); ?>" type="text" />
     </div>
@@ -33,26 +33,26 @@ jQuery(window).load(function () {
 
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster Page Disclaimer'); ?></label>    
+        <label><?php echo __('Cart Page Disclaimer'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
-        <p class='explanation'><?php echo __("Replace default Poster Disclaimer."); ?>
+        <p class='explanation'><?php echo __("Replace default Cart Disclaimer."); ?>
         </p>
         <textarea name="poster_disclaimer" rows="8" cols="40"><?php echo get_option('poster_disclaimer'); ?></textarea>
     </div>
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster Page Help'); ?></label>    
+        <label><?php echo __('Cart Page Help'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
-        <p class='explanation'><?php echo __("Replace default Poster Help."); ?>
+        <p class='explanation'><?php echo __("Replace default Cart Help."); ?>
         </p>
         <textarea name="poster_help" rows="8" cols="40" class="wysiwyg"><?php echo get_option('poster_help'); ?></textarea>
     </div>
 </div>
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster File Size'); ?></label>    
+        <label><?php echo __('Cart File Size'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
         <p class='explanation'><?php echo __("Select image size for item show page."); ?>
@@ -83,7 +83,7 @@ jQuery(window).load(function () {
 </div>
 <div class="field">
     <div class="two columns alpha">
-        <label><?php echo __('Poster Display Show Page'); ?></label>    
+        <label><?php echo __('Cart Display Show Page'); ?></label>    
     </div>
     <div class="inputs five columns omega" >
         <?php 
