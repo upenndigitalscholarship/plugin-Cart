@@ -2,6 +2,8 @@ plugin-Cart
 ==============
 This plugin for [Omeka](http://omeka.org/) is a modification of the [Posters](https://github.com/omeka/plugin-Posters) plugin that allows users to create and save "carts" of Omeka items.
 
+[View the plugin in action here](http://pennds.org/archaebot_database/)
+
 Extension of the Posters plugin:
 * Users can now add an item to their "cart" from the item/show page or the item/browse page
 
