@@ -17,11 +17,20 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 //list of families linking to genus browse
 echo '<br/>';
 
-foreach ($families as $family) {    
+foreach ($families as $family) {  
+    $family_item = get_record('Item', array('advanced' =>
+        array(
+            array(
+                'element_id' => 92,
+                'type' => 'is exactly',
+                'terms' => $family
+            )
+        )
+    ));
     echo '<div class="big-family-box">';
         echo '<div class="family-guy">';
             echo "<h3><a id=\"family_link\" href = \"http://pennds.org/archaebot_database/genus/browse?family=". $family . "\">" . ucfirst($family) . "</a></h3>";
-            echo '<br/><br/>';
+            echo item_image('square_thumbnail', null, null, $family_item);
         echo '</div>';
    echo '</div>';
 }

@@ -26,19 +26,13 @@ if (empty($species)) {
     <?php if (!has_loop_records('items')): ?>
             <p><?php echo __('There are no items to choose from.'); ?></p>
     <?php endif; ?>
-    <?php 
-    $i = 0;
-    foreach(loop('items') as $item): ?>
-        <?php 
-      //  echo 'id: ' . metadata($item,'id');
-        echo posterItemListing($item, $species[$i]);
-        $i = $i + 1;
-        ?>
+    <?php foreach(loop('items') as $item): ?>
+        <?php echo posterItemListing($item); ?>
     <?php endforeach; ?>
 </div>
 
 <?php 
-function posterItemListing($item, $sp) {
+function posterItemListing($item){
     $html = '<div class="item-listing" data-item-id="'. $item->id .'">';
     if (metadata($item, 'has files')) {
         foreach($item->Files as $displayFile) {
@@ -51,11 +45,9 @@ function posterItemListing($item, $sp) {
         }
     }
 
-    //$html .= '<a href="http://pennds.org/archaebot_database/items/show/278"><h3 class="title">'
-    $html .= '<a href="http://pennds.org/archaebot_database/items/show/' . /*$item->id*/ 270 . '"><h4 class="title">'
-          //. metadata($item, array('Dublin Core', 'Title'))
-          . $sp
-          . '</h4></a>'
+    $html .= link_to_item( '<h4 class="title">'
+          . metadata($item,array('Item Type Metadata','Common Name'))
+          . '</h4>' )
           . '<button type="button" class="select-item" >' . __('Select Item').'</button>'
           . '</div>';
 

@@ -49,6 +49,16 @@ class Posters_GenusController extends Omeka_Controller_AbstractActionController
             $species[$i] = $items[$i][text];
         }
         
+        $items = get_records('Item', array('advanced' =>
+            array(
+                array(
+                    'element_id' => 93,
+                    'type' => 'is exactly',
+                    'terms' => $genus_species
+                )
+            )
+        ));        
+        
         $this->view->species = $species;
         $this->view->items = $items;
 

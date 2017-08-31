@@ -28,11 +28,20 @@ echo '<br/>';
 
 if (!empty($genera)) {
     foreach ($genera as $genus) {  
+    $genus_item = get_record('Item', array('advanced' =>
+        array(
+            array(
+                'element_id' => 93,
+                'type' => 'is exactly',
+                'terms' => $genus
+            )
+        )
+    ));        
         echo '<div class="big-family-box">';
             echo '<div class="family-guy">';
                 echo "<h3><a id=\"genus_link\" href = \"http://pennds.org/archaebot_database/genus/show?genus=" . $genus . "\">" . ucfirst($genus) . "</a></h3>";
                 htmlspecialchars($_POST[$genus]);
-                echo '<br/><br/>';
+                echo item_image('square_thumbnail', null, null, $genus_item);
             echo '</div>';
         echo '</div>';    
     }
