@@ -1,3 +1,5 @@
+This repository is no longer active, we switched to putting our work in a fork of the original plugin at: [https://github.com/upenndigitalscholarship/plugin-Posters](https://github.com/upenndigitalscholarship/plugin-Posters)
+
 plugin-Cart
 ==============
 This plugin for [Omeka](http://omeka.org/) is a modification of the [Posters](https://github.com/omeka/plugin-Posters) plugin that allows users to create and save "carts" of Omeka items.
